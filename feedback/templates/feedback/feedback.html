@@ -6,5 +6,9 @@
 </head>
 <body>
     <h2>Оставьте отзыв</h2>
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Отправить</button>
+    </form>
 </body>
-</html>
