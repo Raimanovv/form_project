@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import FeedbackForm
+from .models import Feedback
 
 
 # Create your views here.
@@ -8,6 +9,7 @@ def index(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
+            form.save()
             return HttpResponseRedirect('/done')
     else:
         form = FeedbackForm()
@@ -16,3 +18,4 @@ def index(request):
 
 def done(request):
     return render(request, 'feedback/done.html')
+
