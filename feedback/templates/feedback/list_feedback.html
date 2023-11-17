@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список всех отзывов
+{% endblock %}
+
+{% block content %}
+    {% for one_review in all_reviews %}
+        <h2>{{ one_review.name }} - {{ one_review.surname }} - {{ one_review.feedback }} - {{ one_review.rating }}</h2>
+    {% endfor %}
+{% endblock %}
