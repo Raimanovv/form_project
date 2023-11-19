@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    {% for one_review in all_reviews %}
-        <h2>{{ one_review.name }} - {{ one_review.surname }} - {{ one_review.feedback }} - {{ one_review.rating }}</h2>
-    {% endfor %}
+    <h2>Список отзывов</h2>
+    <ol>
+        {% for feedback in feedbacks %}
+            <li>{{ feedback.name }} - {{ feedback.surname }}: {{ feedback.rating }}</li>
+        {% endfor %}
+    </ol>
 {% endblock %}

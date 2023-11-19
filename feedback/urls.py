@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.FeedBackView.as_view()),
     path('<int:id_feedback>', views.UpdateFeedBackView.as_view()),
     path('list', views.ListFeedBack.as_view()),
-    path('detail/<int:id_feedback>', views.DetailFeedBack.as_view()),
+    path('detail/<int:pk>', views.DetailFeedBack.as_view()),
+    path('update/<int:pk>', views.FeedBackViewUpdate.as_view()),
 ]
